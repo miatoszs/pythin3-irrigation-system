@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<body>
+<h1>Zona 1:</h1>
+<p id="1_name"></p>
+<p id="1_program_start"></p>
+<p id="1_intarval"></p>
+<h1>Zona 2:</h1>
+<p id="2_name"></p>
+<h1>Zona 3:</h1>
+<p id="3_name"></p>
+<p id="3_pin"></p>
+<p id="3_program_1_start"></p>
+<p id="3_program_1_interval"></p>
+<p id="3_program_2_start"></p>
+<p id="3_program_2_interval"></p>
+<h1>egyéb:</h1>
+<p id="suspend"></p>
+<p id="interval_multiplier"></p>
+
+<script>
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+  const jsonData = JSON.parse(this.responseText);
+
+  document.getElementById("1_name").innerHTML = "name: " + jsonData.zonelist[0].name;
+  document.getElementById("1_program_start").innerHTML =  "start time:" + jsonData.zonelist[0].program[0].start;
+  document.getElementById("1_intarval").innerHTML =  "interval:" + jsonData.zonelist[0].program[0].interval;
+
+  document.getElementById("2_name").innerHTML = "name: " + jsonData.zonelist[1].name;
+
+  document.getElementById("3_name").innerHTML = "name: " + jsonData.zonelist[2].name;
+  document.getElementById("3_pin").innerHTML = "pin: " + jsonData.zonelist[2].pin;
+  document.getElementById("3_program_1_start").innerHTML = "first start time:" +jsonData.zonelist[2].program[0].start;
+  document.getElementById("3_program_1_interval").innerHTML =  "first interval:" + jsonData.zonelist[2].program[0].interval;
+  document.getElementById("3_program_2_start").innerHTML = "second start time:" +jsonData.zonelist[2].program[1].start;
+  document.getElementById("3_program_2_interval").innerHTML =  "second interval:" + jsonData.zonelist[2].program[1].interval;
+
+  document.getElementById("suspend").innerHTML = "suspend: " + jsonData.suspend;
+  document.getElementById("interval_multiplier").innerHTML = "interval multiplier: " + jsonData.interval_multiplier;
+
+}
+xmlhttp.open("GET", "config.json");
+xmlhttp.send();
+</script>
+
+</body>
+</html>

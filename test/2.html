@@ -1,0 +1,44 @@
+<html> <meta charset="utf-8"><body>
+<label for="appt-time"><br>csopi:</label>
+
+<form target="target">
+<label for="appt-time">Start time</label>
+<input id="appt-time" type="time" name="appt-time" value= 15:26:00>
+<label for="slider">interval: </label><span id="value"></span>
+<input name="interval" value="1" type="range" min="" max="120" id="range" class="slider">
+<input type = "submit" name = "submit" value = "Submit" />
+</form>
+
+<label for="appt-time"><br>kortefa:</label>
+
+<form target="target">
+<label for="appt-time">Start time</label>
+<input id="appt-time" type="time" name="appt-time" value= 07:00:00>
+<label for="slider">interval: <span id="value"></span></label>
+<input name="interval" value="1" type="range" min="" max="120" id="range" class="slider">
+<input type = "submit" name = "submit" value = "Submit" />
+</form>
+
+<label for="appt-time"><br>trambulin:</label>
+
+<form target="target">
+<label for="appt-time">Start time</label>
+<input id="appt-time" type="time" name="appt-time" value= 08:00:00>
+<label for="slider">interval: <span id="value"></span></label>
+<input name="interval" value="1" type="range" min="" max="120" id="range" class="slider">
+<input id="appt-time" type="time" name="appt-time" value= 19:15:00>
+<label for="slider">interval: <span id="value"></span></label>
+<input name="interval" value="5" type="range" min="" max="120" id="range" class="slider">
+<input type = "submit" name = "submit" value = "Submit" />
+</form>
+
+</body><script>
+var sliders = document.querySelectorAll("#range");
+console.log(sliders);
+for (var i = 0; i < sliders.length; i++) {
+  sliders[i].onchange = function(e) {
+      e.target.previousElementSibling.innerHTML = e.target.value
+   }
+}
+
+</script></html>

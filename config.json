@@ -1,10 +1,9 @@
 {
 "zonelist":[
-	{"name": "csopi",     "pin": 3, "program":[{"start": "07:00:00", "interval": 1}]},
+	{"name": "csopi",     "pin": 3, "program":[{"start": "15:26:00", "interval": 1}]},
 	{"name": "kortefa",   "pin": 5, "program":[{"start": "07:00:00", "interval": 1}]},
-	{"name": "trambulin", "pin": 7, "program":[{"start": "07:00:00", "interval": 1}, {"start": "19:15:00", "interval": 5}]}
+	{"name": "trambulin", "pin": 7, "program":[{"start": "08:00:00", "interval": 1}, {"start": "19:15:00", "interval": 5}]}
 ],
 "suspend" : false,
 "interval_multiplier" : 1
 }
-
